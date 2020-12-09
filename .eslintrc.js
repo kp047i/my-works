@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2020: true,
   },
   extends: [
@@ -85,10 +86,12 @@ module.exports = {
         explicitSpread: 'ignore',
       },
     ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
   },
   overrides: [
     {
-      'files': ['*.tsx'],
+      'files': ['**/*.tsx'],
       'rules': {
         'react/prop-types': 'off',
       },

@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2020: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -22,7 +22,7 @@ module.exports = {
     ecmaVersion: 2020,
     project: './tsconfig.eslint.json',
     sourceType: 'module',
-    tsconfigRootDie: __dirname,
+    tsconfigRootDir: __dirname,
   },
   plugins: [
     '@typescript-eslint',
@@ -31,14 +31,17 @@ module.exports = {
     'react',
     'react-hooks',
   ],
+  root: true,
   rules: {
-    'lines-berween-class-members': [
+    'lines-between-class-members': [
       'error',
       'always',
       {
-        exceptAfterSingleLine: true
-      }
+        exceptAfterSingleLine: true,
+      },
     ],
+    // should be rewritten as `['error', { allowAsStatement: true }]` in ESLint 7 or later
+    // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/1184
     'no-void': 'off',
     'padding-line-between-statements': [
       'error',
@@ -71,7 +74,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       'error',
       {
-        extensions: ['.jsx', '.tsx']
+        extensions: ['.jsx', '.tsx'],
       },
     ],
     'react/jsx-props-no-spreading': [
@@ -80,8 +83,8 @@ module.exports = {
         html: 'enforce',
         custom: 'enforce',
         explicitSpread: 'ignore',
-      }
-    ]
+      },
+    ],
   },
   overrides: [
     {
@@ -98,5 +101,4 @@ module.exports = {
       },
     },
   },
-  root: true,
 };

@@ -5,6 +5,7 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
+    "global.d.ts",
   ],
   "exclude": [
     "node_modules"

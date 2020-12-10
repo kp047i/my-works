@@ -1,18 +1,13 @@
 import React from 'react';
 
+import Layout from '../components/Layout';
+
 const IndexPage: React.FC = () => (
-  <div className="py-20">
-    <div>
-      <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-        Next.js + Tailwind CSS 2.0
-      </h1>
-      <p>
-        Edit
-        <code>src/App.tsx</code>
-        and save to reload
-      </p>
+  <Layout>
+    <div className="py-80">
+      <h1 className="text-5xl text-latte">kappy works</h1>
     </div>
-  </div>
+  </Layout>
 );
 
 export default IndexPage;

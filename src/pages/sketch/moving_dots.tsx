@@ -13,8 +13,11 @@ const MovingDotsPage: React.FC = () => {
   return (
     <Layout>
       <div className="py-80">
-        <div className="flex justify-center border-gray-200">
-          <AviodSSRComponent />
+        <div className="flex flex-col items-center w-hull">
+          <h1 className="text-5xl text-latte pb-80">MovingDots</h1>
+          <div className="">
+            <AviodSSRComponent />
+          </div>
         </div>
       </div>
     </Layout>

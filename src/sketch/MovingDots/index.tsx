@@ -4,14 +4,23 @@ import p5Types from 'p5';
 
 import { Particle, ParticleType } from './Particle';
 
-const MovingDots: React.FC = () => {
+type PropsType = {
+  width: number;
+};
+
+const MovingDots: React.FC<PropsType> = (props) => {
+  const { width } = props;
   const particles: ParticleType[] = [];
   const backgroundColor = '#212D40';
-  const numParticles = 40;
+  let canvasWidth: number;
   let time: number;
+  let numParticles: number;
+  let distanceRange: number;
 
   const setup = (p5: p5Types, parentRef: Element) => {
-    p5.createCanvas(400, 400).parent(parentRef);
+    canvasWidth = p5.min(width, 768);
+    numParticles = p5.min(width / 10, 50);
+    p5.createCanvas(canvasWidth, canvasWidth * 0.5).parent(parentRef);
     p5.background(backgroundColor);
 
     time = p5.random(0, 255);
@@ -28,7 +37,7 @@ const MovingDots: React.FC = () => {
   };
 
   const draw = (p5: p5Types) => {
-    const distanceRange = 40;
+    distanceRange = p5.min(p5.width / 10, 50);
     p5.colorMode(p5.RGB);
     p5.background(backgroundColor);
 
@@ -66,13 +75,14 @@ const MovingDots: React.FC = () => {
         }
       }
     }
-    p5.noFill();
-    p5.stroke('#FEF6E3');
-    p5.strokeWeight(4);
-    p5.rect(0, 0, p5.width, p5.height);
   };
 
-  return <Sketch setup={setup} draw={draw} />;
+  const windowResized = (p5: p5Types) => {
+    canvasWidth = p5.min(width, 768);
+    p5.resizeCanvas(canvasWidth, canvasWidth * 0.5);
+  };
+
+  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
 export default MovingDots;

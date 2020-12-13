@@ -1,10 +1,14 @@
-import p5Types from 'p5';
+import p5 from 'p5';
 
 import { Particle, ParticleType } from './Particle';
 
 type PropsType = {
   clientWidth: number;
 };
+
+interface p5Types extends p5 {
+  myCustomRedrawAccordingToNewPropsHandler: (props: PropsType) => void;
+}
 
 const sketch = (p: p5Types): void => {
   const particles: ParticleType[] = [];
@@ -48,7 +52,6 @@ const sketch = (p: p5Types): void => {
     }
   };
 
-  // eslint-disable-next-line no-param-reassign
   p.draw = () => {
     p.colorMode(p.RGB);
     p.background(backgroundColor);

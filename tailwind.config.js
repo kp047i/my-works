@@ -9,9 +9,14 @@ module.exports = {
         twitter: '#55acee',
       },
       textColor: {
-        latte: '#FEF6E3',
+        latte: '#fdf1d3',
+        latteHover: '#fef6e3',
         copper: '#D66853',
         navy: '#212D40',
+      },
+      ringColor: {
+        latte: '#fdf1d3',
+        latteHover: '#fef6e3',
       },
       spacing: {
         '80': '5rem',

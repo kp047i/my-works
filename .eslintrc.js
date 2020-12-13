@@ -93,6 +93,7 @@ module.exports = {
     ],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
+    "no-param-reassign": 0 // あんまりよくない
   },
   overrides: [
     {

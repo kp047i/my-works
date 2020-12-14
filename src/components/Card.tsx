@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -20,7 +19,11 @@ const Card: React.FC = () => {
     ];
 
     return links.map((link) => (
-      <a href={link.link} key={link.name} className="text-xl text-latte mr-4">
+      <a
+        href={link.link}
+        key={link.name}
+        className="text-latte mr-4 w-6 text-lg lg:w-8 h-6 lg:h-8"
+      >
         <FontAwesomeIcon icon={link.icon} />
       </a>
     ));
@@ -29,7 +32,7 @@ const Card: React.FC = () => {
   return (
     <div className="flex flex-col">
       <div className="mb-8">
-        <Image
+        <img
           src="/avatar.png"
           alt="avator"
           width={80}
@@ -44,7 +47,7 @@ const Card: React.FC = () => {
           Student at Shibaura Insititute of Technology
         </p>
       </div>
-      <div>{socialLinks()}</div>
+      <div className="flex">{socialLinks()}</div>
     </div>
   );
 };

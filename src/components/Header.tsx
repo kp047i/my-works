@@ -26,7 +26,9 @@ const Header: React.FC = () => {
     return links.map((link) => (
       <Link href={link.href} key={link.link}>
         {/* TODO add cursor-pointer  */}
-        <span className="text-xl text-gray-200 ml-8">{link.link}</span>
+        <span className="opacity-50 text-xl text-gray-200 ml-8">
+          {link.link}
+        </span>
       </Link>
     ));
   };
@@ -37,7 +39,7 @@ const Header: React.FC = () => {
         <div className="flex-auto flex-grow h-18 flex items-center justify-between">
           {/* left nav */}
           <Link href="/">
-            <span className="cursor-pointer pl-2 text-xl text-latte hover:text-latteHover hover:bg-gray-700">
+            <span className="cursor-pointer text-xl text-latte ">
               kappy works
             </span>
           </Link>

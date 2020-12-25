@@ -1,11 +1,12 @@
 {
   "extends": "./tsconfig.json",
-  "inxlude": [
+  "include": [
     "src/**/*.js",
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
     "global.d.ts",
+    "next-env.d.ts",
   ],
   "exclude": [
     "node_modules"

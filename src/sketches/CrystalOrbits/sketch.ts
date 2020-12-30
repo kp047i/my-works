@@ -19,7 +19,7 @@ const sketch = (p: p5Types): void => {
   const numRings = 3;
   const crystalPerRing = 3;
   const numCrystal = numRings * crystalPerRing;
-  const radius = 80;
+  const radius = 70;
   let time = 0;
   p.setup = () => {
     const canvasWidth = p.min(p.windowWidth, 768);

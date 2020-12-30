@@ -13,6 +13,9 @@ module.exports = {
       '/sketches/crystal-orbits': {
         page: '/sketches/crystal-orbits'
       },
+      '/sketches/shippou': {
+        page: '/sketches/shippou'
+      },
     }
   },
 }

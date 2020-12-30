@@ -7,6 +7,7 @@ module.exports = {
         navy: '#212D40',
         grayF3: '#f3f3f3',
         twitter: '#55acee',
+        copper: '#D66853',
       },
       textColor: {
         latte: '#fdf1d3',
